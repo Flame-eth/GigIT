@@ -1,0 +1,64 @@
+.popular {
+  width: 100%;
+  background-color: white;
+  padding: 90px 0;
+
+  .pContainer {
+    width: 80%;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 400;
+      color: #2e0249;
+    }
+
+    .boxes {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 50px;
+
+      .box {
+        color: #2e0249;
+        width: 20%;
+        // border: 0.1px solid;
+        padding: 10px;
+        margin: 15px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .icon {
+          justify-content: center;
+          margin: 0 auto;
+        }
+
+        h1 {
+          font-size: 14px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        &:hover {
+          background-color: #2e0249;
+          color: white;
+          transition: 0.5s;
+          border: 0.5 solid white;
+
+          h1 {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

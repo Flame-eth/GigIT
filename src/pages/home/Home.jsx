@@ -3,6 +3,7 @@ import "./Home.scss";
 import Featured from "../../components/featured/Featured";
 import Slide from "../../components/Slide/Slide";
 import Best from "../../components/best/Best";
+import Popular from "../../components/popular/Popular";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Featured />
       <Slide />
       <Best />
+      <Popular />
     </div>
   );
 };
