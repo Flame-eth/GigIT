@@ -6,6 +6,7 @@ import Best from "../../components/best/Best";
 import Popular from "../../components/popular/Popular";
 import Testimonial from "../../components/testimonial/Testimonial";
 import Headstart from "../../components/headstart/Headstart";
+import GigAble from "../../components/gigAble/GigAble";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Popular />
       <Testimonial />
       <Headstart />
+      <GigAble />
     </div>
   );
 };
