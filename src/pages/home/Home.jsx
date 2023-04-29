@@ -5,6 +5,7 @@ import Slide from "../../components/Slide/Slide";
 import Best from "../../components/best/Best";
 import Popular from "../../components/popular/Popular";
 import Testimonial from "../../components/testimonial/Testimonial";
+import Headstart from "../../components/headstart/Headstart";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Best />
       <Popular />
       <Testimonial />
+      <Headstart />
     </div>
   );
 };
