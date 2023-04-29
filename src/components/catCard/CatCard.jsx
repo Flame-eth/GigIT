@@ -3,7 +3,7 @@ import "./CatCard.scss";
 import { Link } from "react-router-dom";
 
 const CatCard = ({ item }) => {
-  console.log(item);
+  // console.log(item);
   return (
     <Link to="gigs">
       <div className="catCard">

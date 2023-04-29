@@ -1,0 +1,113 @@
+.footer {
+  width: 100%;
+  margin-top: 90px;
+  border-top: 0.5px solid #2e0249;
+
+  .fContainer {
+    width: 80%;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+    .fTop {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      //   justify-content: center;
+      //   align-items: center;
+      justify-content: space-around;
+      margin-bottom: 40px;
+
+      .section {
+        h1 {
+          font-size: 30px;
+          font-weight: 600;
+          color: #2e0249;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          gap: 20px;
+          display: flex;
+          flex-direction: column;
+
+          li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #2e0249;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .fBottom {
+      border-top: 0.5px solid #2e0249;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 40px;
+
+      .fLogo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        h1 {
+          font-size: 34px;
+          font-weight: bold;
+          cursor: pointer;
+          font-family: "Bruno Ace SC", cursive;
+          opacity: 0.5;
+        }
+
+        h2 {
+          font-size: 15px;
+          font-weight: 300;
+        }
+      }
+
+      .fSocial {
+        display: flex;
+        gap: 30px;
+
+        .socialIcons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #2e0249;
+
+          cursor: pointer;
+
+          &:hover {
+            // opacity: 0.5;
+            background-color: #2e0249;
+            border-radius: 4px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
