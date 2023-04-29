@@ -9,7 +9,7 @@ import Gig from "./pages/gig/Gig";
 import Gigs from "./pages/gigs/Gigs";
 import Login from "./pages/login/Login";
 import Message from "./pages/message/Message";
-import MyGigs from "./pages/mygigs/MyGigs";
+import MyGigs from "./pages/myGigs/MyGigs";
 import Orders from "./pages/orders/Orders";
 import Register from "./pages/register/Register";
 import Messages from "./pages/messages/Messages";
@@ -46,14 +46,6 @@ function App() {
           element: <Gigs />,
         },
         {
-          path: "/login",
-          element: <Login />,
-        },
-        {
-          path: "/register",
-          element: <Register />,
-        },
-        {
           path: "/message:id",
           element: <Message />,
         },
@@ -71,13 +63,17 @@ function App() {
         },
       ],
     },
+    {
+      path: "/register",
+      element: <Register />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
   ]);
 
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
