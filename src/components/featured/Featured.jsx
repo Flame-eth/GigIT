@@ -1,7 +1,7 @@
 import React from "react";
 import "./Featured.scss";
 import { RiUserSearchFill } from "react-icons/ri";
-import techie from "../../../public/img/techie.png";
+import techie from "../../asset/img/techie.png";
 
 const Featured = () => {
   return (
@@ -16,7 +16,7 @@ const Featured = () => {
             {/* <button>Search</button> */}
             <RiUserSearchFill color="#2e0249" className="fSearchIcon" />
           </div>
-          <div className="popular">
+          <div className="demand">
             <span>Popular:</span>
             <button>Web Development</button>
             <button>Blockchain Development</button>

@@ -4,6 +4,7 @@ import Featured from "../../components/featured/Featured";
 import Slide from "../../components/Slide/Slide";
 import Best from "../../components/best/Best";
 import Popular from "../../components/popular/Popular";
+import Testimonial from "../../components/testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Slide />
       <Best />
       <Popular />
+      <Testimonial />
     </div>
   );
 };
