@@ -106,5 +106,19 @@
         cursor: pointer;
       }
     }
+
+    .login-footer {
+      padding: 15px 0;
+      font-style: italic;
+
+      .link {
+        cursor: pointer;
+        color: #2e0249;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

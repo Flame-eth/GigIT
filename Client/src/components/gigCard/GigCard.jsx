@@ -3,10 +3,11 @@ import "./GigCard.scss";
 import { Link } from "react-router-dom";
 
 const GigCard = ({ item }) => {
+  const coverImg = item.cover;
   return (
     <Link to="/gig/123" className="link">
       <div className="gigCard">
-        <img src={item.img} alt="" />
+        <img src={coverImg} alt="" crossOrigin="anonymous" />
         <div className="info">
           <div className="user">
             <img src={item.pp} alt="" />

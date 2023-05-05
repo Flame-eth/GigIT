@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.scss";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import avatar from "../../asset/img/user-avatar.png";
+import newRequest from "../../utils/newRequest";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -17,13 +19,22 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", isActive);
   }, []);
 
-  const currentUser = {
-    id: 1,
-    userName: "Jane Doe",
-    isSeller: true,
-  };
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  // console.log(currentUser);
 
   const { pathname } = useLocation();
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await newRequest.post("auth/logout");
+      localStorage.setItem("currentUser", null);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={active ? "navbar active" : "navbar"}>
@@ -34,21 +45,29 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-links">
-          <Link to="" className="link">
+          <Link to="/" className="link">
             About Us
           </Link>
-          <Link to="" className="link">
+          <Link to="/" className="link">
             Explore
           </Link>
-          <Link to="" className="link">
+          <Link to="/" className="link">
             Contact
           </Link>
-          <Link to="" className="link">
-            Sign In
-          </Link>
-          {!currentUser.isSeller && <Link>Become a Seller</Link>}
           {!currentUser && (
-            <button className={active ? "active-button" : ""}>Join</button>
+            <Link to="/login" className="link">
+              Sign In
+            </Link>
+          )}
+          {!currentUser?.isSeller && (
+            <Link className="link">Become a Seller</Link>
+          )}
+          {!currentUser && (
+            <button
+              onClick={() => navigate("/register")}
+              className={active ? "active-button" : ""}>
+              Join
+            </button>
           )}
           {currentUser && (
             <div
@@ -56,11 +75,8 @@ const Navbar = () => {
                 setOpen(!open);
               }}
               className="user">
-              <img
-                src="https://images.pexels.com/photos/1181243/pexels-photo-1181243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="user"
-              />
-              <span>{currentUser.userName}</span>
+              <img src={currentUser.img || avatar} alt="user" />
+              <span>{currentUser.username}</span>
               {open && (
                 <div className="options">
                   {currentUser.isSeller && (
@@ -80,7 +96,7 @@ const Navbar = () => {
                   <Link to="/messages" className="link">
                     Messages
                   </Link>
-                  <Link to="/login" className="link">
+                  <Link to="/login" onClick={handleLogout} className="link">
                     Logout
                   </Link>
                 </div>

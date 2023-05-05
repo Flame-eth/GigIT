@@ -17,14 +17,22 @@ mongoose.set("strictQuery", true);
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO);
+    mongoose.connect(process.env.MONGO);
     console.log("Connected to mongoDB!");
   } catch (error) {
     console.log(error);
   }
 };
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+const port = 8800;
+
+app.use(
+  cors({
+    origin: "http://localhost:5173" || "https://www.pexels.com/",
+    credentials: true,
+  })
+);
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
@@ -36,14 +44,56 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/reviews", reviewRoute);
 
-app.use((err, req, res, next) => {
-  const errorStatus = err.status || 500;
-  const errorMessage = err.message || "Something went wrong!";
+// app.use((err, req, res, next) => {
+//   const errorStatus = err.status || 500;
+//   const errorMessage = err.message || "Something went wrong!";
 
-  return res.status(errorStatus).send(errorMessage);
+//   return res.status(errorStatus).send(errorMessage);
+// });
+
+// app.listen(8800, (res) => {
+//   connect();
+//   console.log("Backend server is running!");
+// });
+
+app.use((err, req, res, next) => {
+  // res.header("Access-Control-Allow-Origin", "*");
+  // res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  // res.header("Access-Control-Allow-Headers", "Content-Type");
+
+  // res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Max-Age", "1800");
+  // res.setHeader("Access-Control-Allow-Headers", "content-type");
+  // res.setHeader(
+  //   "Access-Control-Allow-Methods",
+  //   "PUT, POST, GET, DELETE, PATCH, OPTIONS"
+  // );
+
+  // Enabling CORS
+  // res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET,HEAD,OPTIONS,POST,PUT, DELETE"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization"
+  );
+
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong";
+  res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: err.stack,
+  });
+
+  next();
 });
 
-app.listen(8800, () => {
+app.listen(process.env.PORT || port, () => {
   connect();
-  console.log("Backend server is running!");
+  console.log("Server is running");
 });
