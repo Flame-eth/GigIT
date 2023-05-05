@@ -7,6 +7,7 @@ import newRequest from "../../utils/newRequest";
 import { useLocation } from "react-router-dom";
 
 function Gigs() {
+  window.scrollTo(0, 0);
   const [sort, setSort] = useState("sales");
   const [open, setOpen] = useState(false);
   const minRef = useRef();
@@ -25,7 +26,7 @@ function Gigs() {
       }),
   });
 
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     refetch();

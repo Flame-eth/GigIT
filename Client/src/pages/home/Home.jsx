@@ -9,6 +9,7 @@ import Headstart from "../../components/headstart/Headstart";
 import GigAble from "../../components/gigAble/GigAble";
 
 const Home = () => {
+  window.scrollTo(0, 0);
   return (
     <div className="home">
       <Featured />

@@ -51,7 +51,7 @@ const Login = () => {
       setTimeout(() => {
         navigate("/");
       }, 3000);
-      console.log(res.data);
+      // console.log(res.data);
     } catch (error) {
       setError(error.response.data);
       toast.error(error.response.data, {

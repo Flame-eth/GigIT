@@ -48,7 +48,7 @@ function App() {
           element: <Add />,
         },
         {
-          path: "/gig:id",
+          path: "/gig/:id",
           element: <Gig />,
         },
         {
@@ -56,7 +56,7 @@ function App() {
           element: <Gigs />,
         },
         {
-          path: "/message:id",
+          path: "/message/:id",
           element: <Message />,
         },
         {

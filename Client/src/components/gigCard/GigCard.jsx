@@ -1,22 +1,47 @@
 import React from "react";
 import "./GigCard.scss";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
+import avatar from "../../asset/img/user-avatar.png";
 
 const GigCard = ({ item }) => {
-  const coverImg = item.cover;
+  window.scrollTo(0, 0);
+  // console.log(item);
+  const coverImg = [
+    "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  ];
+  const index = Math.floor(Math.random() * 4);
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: [`${item.userId}`],
+    queryFn: () =>
+      newRequest(`/users/${item.userId}`).then((res) => {
+        return res.data;
+      }),
+  });
   return (
-    <Link to="/gig/123" className="link">
+    <Link to={`/gig/${item._id}`} className="link">
       <div className="gigCard">
-        <img src={coverImg} alt="" crossOrigin="anonymous" />
+        <img src={coverImg[index]} alt="" crossOrigin="anonymous" />
         <div className="info">
-          <div className="user">
-            <img src={item.pp} alt="" />
-            <span>{item.username}</span>
-          </div>
+          {isLoading ? (
+            "Loading..."
+          ) : error ? (
+            "Something went wrong"
+          ) : (
+            <div className="user">
+              <img src={data.img || avatar} alt="" />
+              <span>{data.username}</span>
+            </div>
+          )}
           <p>{item.desc}</p>
           <div className="star">
             <img src="./img/star.png" alt="" />
-            <span>{item.star}</span>
+            <span>{Math.round(item.totalStars / item.starNumber)}</span>
           </div>
         </div>
         <hr />
