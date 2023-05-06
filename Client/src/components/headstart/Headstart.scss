@@ -86,3 +86,18 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .headstart {
+    .hContainer {
+      .hCards {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .hCard {
+          width: 80%;
+        }
+      }
+    }
+  }
+}

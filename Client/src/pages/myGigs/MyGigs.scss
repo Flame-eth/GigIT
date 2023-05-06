@@ -52,3 +52,25 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .myGigs {
+    .container {
+      width: 100%;
+      padding: 20px 0px;
+
+      .title {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      table {
+        tr {
+          td {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -297,3 +297,46 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+
+    .left {
+      .breadcrumbs {
+        display: none;
+      }
+
+      .slider {
+        img {
+          max-height: 300px;
+        }
+      }
+
+      .seller {
+        .user {
+          flex-direction: column;
+          gap: 10px;
+          align-items: flex-start;
+
+          .stars {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .right {
+      .price {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .details {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+}

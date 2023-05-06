@@ -93,7 +93,7 @@ function Register() {
   return (
     <>
       <ToastContainer />
-      <Navbar />
+
       <div className="register">
         <form onSubmit={handleSubmit}>
           <div className="left">
@@ -152,7 +152,6 @@ function Register() {
           </div>
         </form>
       </div>
-      <Footer />
     </>
   );
 }

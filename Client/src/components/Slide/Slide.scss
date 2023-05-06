@@ -60,3 +60,14 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .slide {
+    display: none;
+    .sContainer {
+      .sCard {
+        width: 100%;
+      }
+    }
+  }
+}

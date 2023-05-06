@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 
   form {
-    width: 960px;
+    // width: 960px;
+    width: 80%;
     padding: 100px 0px;
     display: flex;
     gap: 120px;
@@ -101,6 +103,20 @@
           -ms-transform: translateX(26px);
           transform: translateX(26px);
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .register {
+    form {
+      flex-direction: column;
+      gap: 50px;
+
+      .left,
+      .right {
+        width: 100%;
       }
     }
   }

@@ -9,6 +9,7 @@ import newRequest from "../../utils/newRequest";
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
+  const [dashboard, setDashboard] = useState(false);
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -45,13 +46,13 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-links">
-          <Link to="/" className="link">
+          <Link to="/" className="link mini-screen">
             About Us
           </Link>
-          <Link to="/" className="link">
+          <Link to="/" className="link mini-screen">
             Explore
           </Link>
-          <Link to="/" className="link">
+          <Link to="/" className="link mini-screen">
             Contact
           </Link>
           {!currentUser && (
@@ -60,7 +61,7 @@ const Navbar = () => {
             </Link>
           )}
           {!currentUser?.isSeller && (
-            <Link className="link">Become a Seller</Link>
+            <Link className="link mini-screen">Become a Seller</Link>
           )}
           {!currentUser && (
             <button
@@ -116,6 +117,46 @@ const Navbar = () => {
             <span>Technical Writing</span>
           </div>
         </>
+      )}
+      {dashboard && (
+        <ul>
+          <li>
+            <Link to="/" className="link">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="link">
+              Explore
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="link">
+              Contact
+            </Link>
+          </li>
+
+          <li>
+            {!currentUser?.isSeller && (
+              <Link className="link">Become a Seller</Link>
+            )}
+          </li>
+          <li>
+            <Link to="/orders" className="link">
+              Orders
+            </Link>
+          </li>
+          <li>
+            <Link to="/messages" className="link">
+              Messages
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" onClick={handleLogout} className="link">
+              Logout
+            </Link>
+          </li>
+        </ul>
       )}
     </div>
   );

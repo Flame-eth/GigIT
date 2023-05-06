@@ -99,3 +99,40 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .gigAble {
+    .gContainer {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px;
+      border-radius: 14px;
+
+      .gText {
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+        align-items: start;
+        text-align: left;
+
+        p {
+          font-size: 25px;
+
+          span {
+            font-size: 30px;
+          }
+        }
+
+        button {
+          width: 150px;
+          height: 40px;
+          font-size: 15px;
+        }
+      }
+
+      .gImg {
+        display: none;
+      }
+    }
+  }
+}

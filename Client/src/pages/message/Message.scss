@@ -86,3 +86,34 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    margin: 0px;
+    .messages {
+      padding: 20px;
+      height: 400px;
+      .item {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+        p {
+          max-width: 300px;
+          font-size: 14px;
+        }
+      }
+    }
+    .write {
+      textarea {
+        width: 70%;
+        height: 80px;
+      }
+      button {
+        padding: 10px;
+        width: 80px;
+      }
+    }
+  }
+}

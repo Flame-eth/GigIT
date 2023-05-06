@@ -109,3 +109,37 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .gigs {
+    width: 100%;
+    .container {
+      margin: 0 auto;
+      width: 80%;
+      // padding: 0px 20px;
+
+      .menu {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+
+        .left {
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          align-items: flex-start;
+          justify-content: flex-start;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+
+      .cards {
+        justify-content: center;
+      }
+    }
+  }
+}

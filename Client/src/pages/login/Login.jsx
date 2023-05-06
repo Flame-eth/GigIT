@@ -77,7 +77,7 @@ const Login = () => {
   return (
     <>
       <ToastContainer />
-      <Navbar />
+
       <div className="login">
         <div className="login-container">
           <h1>Login</h1>
@@ -112,7 +112,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

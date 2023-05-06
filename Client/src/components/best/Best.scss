@@ -118,3 +118,28 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .best {
+    background-color: white;
+    color: #2e0249;
+    .bContainer {
+      .bText {
+        color: #2e0249;
+        h1 {
+          font-size: 25px;
+        }
+        .bTextSec {
+          .bTextSecLog {
+            p {
+              font-size: 18px;
+            }
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

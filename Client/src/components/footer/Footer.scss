@@ -17,10 +17,10 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
       //   justify-content: center;
       //   align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       margin-bottom: 40px;
 
       .section {
@@ -107,6 +107,48 @@
             border-radius: 4px;
             color: white;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .fContainer {
+    .fTop {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      .section {
+        h1 {
+          font-size: 20px;
+          margin: 20px 0;
+        }
+
+        ul {
+          gap: 5px;
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .fBottom {
+      gap: 30px;
+      .fLogo {
+        h1 {
+          font-size: 24px;
+        }
+
+        h2 {
+          font-size: 12px;
+        }
+      }
+
+      .fSocial {
+        .socialIcons {
+          font-size: 20px;
         }
       }
     }

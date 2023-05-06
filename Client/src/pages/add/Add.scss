@@ -72,3 +72,31 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .add {
+    .container {
+      width: 100%;
+      padding: 20px;
+
+      .sections {
+        flex-direction: column;
+        gap: 20px;
+
+        .info,
+        .details {
+          input,
+          select,
+          textarea {
+            padding: 10px;
+          }
+
+          .images {
+            flex-direction: column;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}
