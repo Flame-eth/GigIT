@@ -5,6 +5,7 @@ import newRequest from "../../utils/newRequest";
 import "./Message.scss";
 
 const Message = () => {
+  window.scrollTo(0, 0);
   const { id } = useParams();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 

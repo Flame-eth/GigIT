@@ -9,6 +9,7 @@ const Success = () => {
   const payment_intent = params.get("payment_intent");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const makeRequest = async () => {
       try {
         await newRequest.put("/orders", { payment_intent });

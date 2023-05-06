@@ -8,6 +8,7 @@ const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const navigate = useNavigate();
+  window.scrollTo(0, 0);
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],

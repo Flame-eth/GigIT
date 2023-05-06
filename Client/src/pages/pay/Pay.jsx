@@ -11,6 +11,7 @@ const stripePromise = loadStripe(
 );
 
 const Pay = () => {
+  window.scrollTo(0, 0);
   const [clientSecret, setClientSecret] = useState("");
 
   const { id } = useParams();

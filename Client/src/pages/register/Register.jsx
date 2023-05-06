@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
+  window.scrollTo(0, 0);
   const [file, setFile] = useState(null);
   const [user, setUser] = useState({
     username: "",

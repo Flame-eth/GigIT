@@ -7,6 +7,8 @@ import newRequest from "../../utils/newRequest";
 
 function MyGigs() {
   const currentUser = getCurrentUser();
+
+  window.scrollTo(0, 0);
   // console.log(currentUser);
 
   const queryClient = useQueryClient();
@@ -19,7 +21,6 @@ function MyGigs() {
       }),
   });
 
-  
   const mutation = useMutation({
     mutationFn: (id) => {
       return newRequest.delete(`/gigs/${id}`);
