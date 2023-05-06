@@ -36,11 +36,15 @@ const Reviews = ({ gigId }) => {
     <div className="reviews">
       <ToastContainer />
       <h2>Reviews</h2>
-      {isLoading
-        ? "loading"
-        : error
-        ? "Something went wrong!"
-        : data.map((review) => <Review key={review._id} review={review} />)}
+      {isLoading ? (
+        "loading"
+      ) : error ? (
+        "Something went wrong!"
+      ) : data.length == 0 ? (
+        <h3 style={{ padding: "40px 0px" }}> No reviews yet!</h3>
+      ) : (
+        data.map((review) => <Review key={review._id} review={review} />)
+      )}
       <div className="add">
         <h3>Add a review</h3>
         <form action="" className="addForm" onSubmit={handleSubmit}>

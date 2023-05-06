@@ -31,6 +31,8 @@ const Messages = () => {
     mutation.mutate(id);
   };
 
+  console.log(data);
+
   return (
     <div className="messages">
       {isLoading ? (
@@ -49,6 +51,11 @@ const Messages = () => {
               <th>Date</th>
               <th>Action</th>
             </tr>
+            {data.length === 0 && (
+              <tr>
+                <td colSpan="4">No Messages</td>
+              </tr>
+            )}
             {data.map((c) => (
               <tr
                 className={
