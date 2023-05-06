@@ -28,7 +28,10 @@ const port = 8800;
 
 app.use(
   cors({
-    origin: "http://localhost:5173" || "https://www.pexels.com/",
+    origin:
+      "https://gig-it-git-main-flame-eth.vercel.app/" ||
+      "http://localhost:5173" ||
+      "https://www.pexels.com/",
     credentials: true,
   })
 );
