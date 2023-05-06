@@ -3,7 +3,7 @@ import "./Gig.scss";
 import { Slider } from "infinite-react-carousel/lib";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import avatar from "../../asset/img/user-avatar.png";
 import axios from "axios";
 import Reviews from "../../components/reviews/Reviews";
@@ -28,9 +28,9 @@ function Gig() {
         return res.data;
       }),
   });
-  console.log(data);
+  // console.log(data);
   const userId = data?.userId;
-  console.log(userId);
+  // console.log(userId);
 
   const {
     isLoading: isLoadingUser,
@@ -44,7 +44,7 @@ function Gig() {
       }),
     enabled: !!userId,
   });
-  console.log(dataUser);
+  // console.log(dataUser);
   return (
     <div className="gig">
       {isLoading ? (
@@ -156,7 +156,9 @@ function Gig() {
                 </div>;
               })}
             </div>
-            <button>Continue</button>
+            <Link to={`/pay/${id}`} className="link">
+              <button>Continue</button>
+            </Link>
           </div>
         </div>
       )}

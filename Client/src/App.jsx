@@ -1,25 +1,21 @@
-import React from "react";
 import "./app.scss";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
-import Add from "./pages/add/Add";
-import Gig from "./pages/gig/Gig";
 import Gigs from "./pages/gigs/Gigs";
+import Gig from "./pages/gig/Gig";
 import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import Add from "./pages/add/Add";
+import Orders from "./pages/orders/Orders";
+import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
-import Orders from "./pages/orders/Orders";
-import Register from "./pages/register/Register";
-import Messages from "./pages/messages/Messages";
-
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from "@tanstack/react-query";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Pay from "./pages/pay/Pay";
+import Success from "./pages/success/Success";
 function App() {
   const queryClient = new QueryClient();
 
@@ -34,6 +30,7 @@ function App() {
       </div>
     );
   };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -44,6 +41,26 @@ function App() {
           element: <Home />,
         },
         {
+          path: "/gigs",
+          element: <Gigs />,
+        },
+        {
+          path: "/myGigs",
+          element: <MyGigs />,
+        },
+        {
+          path: "/orders",
+          element: <Orders />,
+        },
+        {
+          path: "/messages",
+          element: <Messages />,
+        },
+        {
+          path: "/message/:id",
+          element: <Message />,
+        },
+        {
           path: "/add",
           element: <Add />,
         },
@@ -52,34 +69,22 @@ function App() {
           element: <Gig />,
         },
         {
-          path: "/gigs",
-          element: <Gigs />,
+          path: "/register",
+          element: <Register />,
         },
         {
-          path: "/message/:id",
-          element: <Message />,
+          path: "/login",
+          element: <Login />,
         },
         {
-          path: "/messages",
-          element: <Messages />,
+          path: "/pay/:id",
+          element: <Pay />,
         },
         {
-          path: "/mygigs",
-          element: <MyGigs />,
-        },
-        {
-          path: "/orders",
-          element: <Orders />,
+          path: "/success",
+          element: <Success />,
         },
       ],
-    },
-    {
-      path: "/register",
-      element: <Register />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
     },
   ]);
 

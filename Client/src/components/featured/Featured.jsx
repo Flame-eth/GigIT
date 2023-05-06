@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Featured.scss";
 import { RiUserSearchFill } from "react-icons/ri";
 import techie from "../../asset/img/techie.png";
@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const Featured = () => {
   const navigate = useNavigate();
+
+  const [input, setInput] = useState("");
+
+  const handleSubmit = () => {};
 
   return (
     <div className="featured">
@@ -15,10 +19,14 @@ const Featured = () => {
             Find the perfect <span> techie </span> for your project
           </h1>
           <div className="fSearch">
-            <input type="text" placeholder="Try Blockchain Development " />
+            <input
+              type="text"
+              placeholder="Try Blockchain Development "
+              onChange={(e) => setInput(e.target.value)}
+            />
             {/* <button>Search</button> */}
             <RiUserSearchFill
-              onClick={() => navigate("/gigs")}
+              onClick={() => navigate(`/gigs?search=${input}`)}
               color="#2e0249"
               className="fSearchIcon"
             />

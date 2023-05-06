@@ -81,8 +81,8 @@ const Navbar = () => {
                 <div className="options">
                   {currentUser.isSeller && (
                     <>
-                      <Link to="/gigs" className="link">
-                        Gigs
+                      <Link to="/myGigs" className="link">
+                        My Gigs
                       </Link>
                       <Link to="/add" className="link">
                         Add New Gig
@@ -91,7 +91,7 @@ const Navbar = () => {
                   )}
 
                   <Link to="/orders" className="link">
-                    Order
+                    Orders
                   </Link>
                   <Link to="/messages" className="link">
                     Messages
