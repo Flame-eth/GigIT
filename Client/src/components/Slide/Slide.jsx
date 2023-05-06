@@ -10,7 +10,7 @@ const Slide = () => {
       <div className="sContainer">
         <Slider slidesToShow={4} arrowsScroll={2}>
           {cardData.map((card) => (
-            <CatCard item={card} key={card.id} />
+            <CatCard item={card} key={card.id} className="sCard" />
           ))}
         </Slider>
       </div>

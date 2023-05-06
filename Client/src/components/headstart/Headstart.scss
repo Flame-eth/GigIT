@@ -71,3 +71,18 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .headstart {
+    .hContainer {
+      .hCards {
+        flex-direction: row;
+        align-items: start;
+        justify-content: left;
+        .hCard {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

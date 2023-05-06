@@ -29,3 +29,34 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .slide {
+    flex-direction: column;
+
+    .sContainer {
+      width: 100%;
+      gap: 20px;
+      justify-content: space-between;
+
+      flex-direction: column;
+      .carousel-prev,
+      .carousel-next {
+        width: 30px;
+        height: 30px;
+      }
+
+      .carousel-prev {
+        left: 0;
+      }
+
+      .carousel-next {
+        right: 0;
+      }
+
+      .sCard {
+        width: 50%;
+      }
+    }
+  }
+}
