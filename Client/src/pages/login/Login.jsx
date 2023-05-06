@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./login.scss";
+import "./Login.scss";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import axios from "axios";
