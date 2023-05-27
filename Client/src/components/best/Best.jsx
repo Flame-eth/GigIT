@@ -30,7 +30,6 @@ const Best = () => {
               project-based pricing. No hourly rates, no hidden fees.
             </p>
           </div>
-
           <div className="bTextSec">
             <div className="bTextSecLog">
               <IoMdCheckmarkCircleOutline size={30} className="bIcon" />
